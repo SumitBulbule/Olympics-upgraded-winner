@@ -1,8 +1,8 @@
---- Importing libraries
+# Importing libraries
 import numpy as np
 import pandas as pd
 
---- Reading files
+# Reading files
 df = pd.read_csv('athlete_events.csv')
 region_df = pd.read_csv('noc_regions.csv')
 
@@ -10,18 +10,18 @@ region_df = pd.read_csv('noc_regions.csv')
 df.head()
 region_df.head()
 
---- Filtering only summer season data
+# Filtering only summer season data
 df = df[df['Season'] == 'Summer']
 
 df.shape
 
---- merging two dataframes
+# merging two dataframes
 df = df.merge(region_df,on='NOC',how='left')
 
 df['region'].value_counts()
 df['region'].unique()
 
---- Handling Null values
+# Handling Null values
 df.isnull().sum()
 
 
